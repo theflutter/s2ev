@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:s2ev_app/widgets/otp_button_widget.dart';
+import 'package:s2ev_app/widgets/password_button_widget.dart';
+import 'package:s2ev_app/widgets/phone_number_widget.dart';
+
+import '../widgets/email_button_widget.dart';
+import '../widgets/login_button_widget.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -107,61 +113,20 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.all(10.0),
               child: Column(
                 children: [
-                  Container(
-                    width: 370,
-                    height: 46,
-                    child: TextField(
-                      controller: emailController,
-                      decoration: InputDecoration(
-                        hintText: 'Email',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                  ),
+
+                  //email text button widget
+                  EmailButtonWidget(emailController: emailController),
+
                   SizedBox(height: 23),
-                  Container(
-                    width: 370,
-                    height: 46,
-                    child: TextField(
-                      controller: emailController,
-                      decoration: InputDecoration(
-                        hintText: 'Password',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                  ),
+                  //passwrod widget
+                  PasswordButtonWidget(emailController: emailController),
+
                   SizedBox(height: 23),
-                  Container(
-                    width: 370,
-                    height: 46,
-                    child: Container(
-                      width: double.infinity,
-                      child: TextButton(
-                        onPressed: () {
-                          // Send OTP logic here
-                        },
-                        style: TextButton.styleFrom(
-                          backgroundColor: Color(0xFFFC683F),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        child: Text(
-                          'Login',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+
+                  LoginButtonWidget(),
+
                   SizedBox(height: 36),
+                  
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: Row(
@@ -227,45 +192,16 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.all(10.0),
               child: Column(
                 children: [
-                  Container(
-                    width: 370,
-                    height: 46,
-                    child: TextField(
-                      controller: phoneNumberController,
-                      decoration: InputDecoration(
-                        hintText: 'Phone Number',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                  ),
+
+                  PhoneNumberWidget(phoneNumberController: phoneNumberController),
+                  
                   SizedBox(height: 17),
                   Container(
                     width: 370,
                     height: 46,
-                    child: Container(
-                      width: double.infinity,
-                      child: TextButton(
-                        onPressed: () {
-                          // Send OTP logic here
-                        },
-                        style: TextButton.styleFrom(
-                          backgroundColor: Color(0xFFFC683F),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        child: Text(
-                          'Send OTP',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
+
+                    child: OtpButtonWidget(),
+
                   ),
                   SizedBox(height: 36),
                   Padding(
@@ -333,3 +269,13 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
