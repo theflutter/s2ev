@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:s2ev_app/screens/verify_otp.dart';
 import 'package:s2ev_app/widgets/otp_button_widget.dart';
 import 'package:s2ev_app/widgets/password_button_widget.dart';
 import 'package:s2ev_app/widgets/phone_number_widget.dart';
@@ -62,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                       });
                     },
                     child: Container(
-                      width: 150,
+                      width: MediaQuery.of(context).size.width / 2.5,
                       alignment: Alignment.center,
                       color: isEmailSelected
                           ? Color(0xFF5848B9)
@@ -87,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                       });
                     },
                     child: Container(
-                      width: 150,
+                      width: MediaQuery.of(context).size.width / 2.5,
                       alignment: Alignment.center,
                       color: isPhoneNumberSelected
                           ? Color(0xFF5848B9)
@@ -113,7 +114,6 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.all(10.0),
               child: Column(
                 children: [
-
                   //email text button widget
                   EmailButtonWidget(emailController: emailController),
 
@@ -126,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                   LoginButtonWidget(),
 
                   SizedBox(height: 36),
-                  
+
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: Row(
@@ -192,16 +192,22 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.all(10.0),
               child: Column(
                 children: [
-
-                  PhoneNumberWidget(phoneNumberController: phoneNumberController),
-                  
+                  PhoneNumberWidget(
+                      phoneNumberController: phoneNumberController),
                   SizedBox(height: 17),
                   Container(
                     width: 370,
                     height: 46,
-
-                    child: OtpButtonWidget(),
-
+                    child: OtpButtonWidget(
+                      text: "Send OTP",
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => VerifyOTP(),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                   SizedBox(height: 36),
                   Padding(
@@ -269,13 +275,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-

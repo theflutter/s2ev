@@ -28,6 +28,7 @@ class LoginButtonWidget extends StatelessWidget {
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: Colors.white,
+              fontFamily: 'Poppins',
             ),
           ),
         ),
