@@ -17,10 +17,10 @@ class OtpButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           color: Color(0xFFFC683F),
         ),
-        child: const Center(
+        child: Center(
           child: Text(
-            'Send OTP',
-            style: TextStyle(
+            text,
+            style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,

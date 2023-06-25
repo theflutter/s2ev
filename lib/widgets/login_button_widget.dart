@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
 class LoginButtonWidget extends StatelessWidget {
-  const LoginButtonWidget({
-    super.key,
-  });
-
   @override
   Widget build(BuildContext context) {
     return Container(

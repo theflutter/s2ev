@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:s2ev_app/screens/verify_otp.dart';
 import 'package:s2ev_app/widgets/otp_button_widget.dart';
-import 'package:s2ev_app/widgets/password_button_widget.dart';
 import 'package:s2ev_app/widgets/phone_number_widget.dart';
 
-import '../widgets/email_button_widget.dart';
+import '../widgets/text_field_widget.dart';
 import '../widgets/login_button_widget.dart';
 
 class LoginPage extends StatefulWidget {
@@ -111,22 +110,19 @@ class _LoginPageState extends State<LoginPage> {
           ),
           if (isEmailSelected)
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.only(top: 23),
               child: Column(
                 children: [
-                  //email text button widget
-                  EmailButtonWidget(emailController: emailController),
-
+                  CustomTextField(
+                    text: 'Email',
+                  ),
                   SizedBox(height: 23),
-                  //passwrod widget
-                  PasswordButtonWidget(emailController: emailController),
-
+                  CustomTextField(
+                    text: 'Password',
+                  ),
                   SizedBox(height: 23),
-
                   LoginButtonWidget(),
-
                   SizedBox(height: 36),
-
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: Row(
@@ -159,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       SvgPicture.asset("assets/google.svg"),
                       SizedBox(width: 4),
-                      Text(
+                      const Text(
                         'Google',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
@@ -242,7 +238,7 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       SvgPicture.asset("assets/google.svg"),
                       SizedBox(width: 4),
-                      Text(
+                      const Text(
                         'Google',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),

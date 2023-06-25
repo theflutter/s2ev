@@ -12,8 +12,7 @@ class LocationPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(padding: EdgeInsets.all(10)),
-              SvgPicture.asset("assets/place.svg"),
-              Text(
+              const Text(
                 'Location',
                 style: TextStyle(
                   fontSize: 24,
@@ -22,8 +21,10 @@ class LocationPage extends StatelessWidget {
                   color: Color(0xff19294F),
                 ),
               ),
-              SizedBox(height: 120),
-              Text(
+              SizedBox(height: 20),
+              SvgPicture.asset("assets/place.svg"),
+              SizedBox(height: 30),
+              const Text(
                 'Allow  S2EV to access this devices location.',
                 style: TextStyle(
                   fontSize: 16,
@@ -52,7 +53,7 @@ class LocationPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(5),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Allow',
                     style: TextStyle(
                       fontSize: 16,

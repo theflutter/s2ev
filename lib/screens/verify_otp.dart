@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:s2ev_app/screens/location_page.dart';
 
 class VerifyOTP extends StatelessWidget {
